@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col">
+        <ul class="list-group">
+            <li *ngFor="let todo of todos" class="list-group-item">
+                {{ todo.name }} : {{ todo.contenu }}
+                <img src="../../../assets/images/delete.png" (click)="deleteTodo(todo)">
+            </li>
+        </ul>
+    </div>
+      
+    <div class="col">
+         <div class="form">
+            <label>Name:</label>
+            <input type="text" class="form-control" [(ngModel)]="name">
+            <label>Contenu:</label>
+            <input type="text" class="form-control" [(ngModel)]="contenu">
+         </div>
+         <button 
+         type="button" 
+         [disabled]="!name || !contenu"
+         class="btn btn-primary" 
+         (click)="addTodo()">Add</button>
+    </div>
+    
+</div>
+
+
